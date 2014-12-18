@@ -29,6 +29,16 @@
         controller: "HabitController",
         controllerAs: "habitCtrl"
       })
+      .when('/login', {
+        templateUrl: "views/login.html",
+        controller: "LoginController",
+        controllerAs: "loginCtrl",
+        resolve: {
+          data: function(authFactory){
+            authFactory.disallowLogin();
+          }
+        }
+      })
       //.otherwise({redirectTo: "/"});
     })
 }());

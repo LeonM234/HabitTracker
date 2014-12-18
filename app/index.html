@@ -20,7 +20,8 @@
     <a class="btn btn-primary navbtn" href="/#/paths">Pick a Path</a>
     <a class="btn btn-primary navbtn" href="/#/adviceandresources">Advice + Resources</a>
     <a class="btn btn-success navbtn" id="newHabit" href="">New Habit</a>
-    <a id="login" class="btn btn-success" href="" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body">Login / Register</a>
+    <a class="login btn btn-success" href="" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body" ng-hide="user">Login / Register</a>
+    <a class="login btn btn-success" href="" ng-show="user">Logout</a>
   </div>
   <div class="site-body">
     <div ng-view></div>
@@ -37,6 +38,7 @@
   <script src="js/main.js"></script>
   <script src="main.config.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/constants.js"></script>
 </body>
 </html>
 <!--ng-controller="HabitController as habitCtrl"-->
