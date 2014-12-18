@@ -6,19 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap-additions/dist/bootstrap-additions.min.css">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="shortcut icon" href="images/burn5.ico">
+  ">
   <title>Forge</title>
 </head>
 <body>
-  <div class="container">
-    <a class="btn btn-primary" href="/#/">HOME</a>
-    <a class="btn btn-primary" href="/#/tracker">Habit Tracker</a>
-    <a class="btn btn-primary" href="/#/stats">Progress Statistics</a>
-    <a class="btn btn-primary" href="/#/paths">Pick a Path</a>
-    <a class="btn btn-primary" href="/#/adviceandresources">Advice + Resources</a>
-    <a class="btn btn-success" href="">New Habit</a>
-    <a class="btn btn-success" href="">Login / Register</a>
-    <h1>My Habits</h1>
+  <div class="splash-nav">
+    <a class="btn btn-primary navbtn" href="/#/">HOME</a>
+    <a class="btn btn-primary navbtn" href="/#/tracker">Habit Tracker</a>
+    <a class="btn btn-primary navbtn" href="/#/stats">Progress Statistics</a>
+    <a class="btn btn-primary navbtn" href="/#/paths">Pick a Path</a>
+    <a class="btn btn-primary navbtn" href="/#/adviceandresources">Advice + Resources</a>
+    <a class="btn btn-success navbtn" id="newHabit" href="">New Habit</a>
+    <a id="login" class="btn btn-success" href="" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body">Login / Register</a>
+  </div>
+  <div class="site-body">
     <div ng-view></div>
   </div>
 
@@ -29,6 +33,7 @@
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+  <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
   <script src="js/main.js"></script>
   <script src="main.config.js"></script>
   <script src="js/controllers.js"></script>

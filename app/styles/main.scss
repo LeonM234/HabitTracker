@@ -1,16 +1,74 @@
-@mixin background-color {
+// ---- MIXINS -----
+@mixin textColor { color: rgb(215, 215, 215); }
+@mixin backColor($num) { background-color: rgb($num, $num, $num); }
 
+// ----- NAV STYLES -----
+.splash-nav{
+  @include backColor(50);
+  width: 100%;
+  padding-left: 5px;
 }
 
-.btn-primary {
+.navbtn {
   margin: 10px 0;
+  background-color: #FF9800;
 }
 
-h1,
-p {
-  color: rgb(215, 215, 215);
+#newHabit {
+  background-color: #00BCD4;
 }
 
+#login {
+  float: right;
+  margin: 10px 10px;
+}
+
+// ----- JUMBOTRON STYLES -----
+.jumbotron{
+  text-align: center;
+  background: url('../images/long_road-amber.jpg') no-repeat center fixed;
+  background-size: cover;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  min-height: 550px;
+}
+
+#splashFlame {
+  height: 5%;
+  width: 5%;
+}
+
+// ----- BODY STYLES -----
 body {
-  background-color: rgb(30, 30, 30);
+  @include backColor(30);
+}
+
+h1, h3, p, label {
+  @include textColor;
+}
+
+// ---- MODAL STYLES -----
+// ADD BOOTSTRAP COLUMNS TO THE MODAL STUFF TO ALIGN IT WHEN HOME --> MUCH EASIER
+#asideCheck {
+  @include backColor(50);
+  float: right;
+  width: 45%;
+
+  form {
+    margin-top: 30px;
+  }
+
+  .form-control{
+    max-width: 75%;
+    margin: 0 auto;
+  }
+
+  #loginButtons {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+
+  #emailLabel, #passwordLabel {
+    margin: 0 12%;
+  }
 }
