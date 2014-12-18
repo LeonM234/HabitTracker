@@ -108,7 +108,7 @@
       vm.login = function(){
         authFactory.login(vm.email, vm.password, function(){
           $location.path('/');
-          $scope.apply();
+          $scope.$apply();
         });
       };
 
@@ -127,7 +127,7 @@
     .controller('LogoutController', function($scope, $location, authFactory){
       authFactory.logout(function(){
         $location.path('/');
-        $scope.apply();
+        $scope.$apply();
       })
     })
 }());
