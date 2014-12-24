@@ -14,6 +14,11 @@
         controller: "HabitController",
         controllerAs: "habitCtrl"
       })
+      .when('/habitmarks', {
+        templateUrl: "views/habitmarks.html",
+        controller: "HabitController",
+        controllerAs: "habitCtrl"
+      })
       .when('/stats', {
         templateUrl: "views/stats.html",
         controller: "HabitController",

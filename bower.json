@@ -1,7 +1,7 @@
 {
   "name": "HabitTracker",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "app/index.html",
   "authors": [
     "Leon Peck"
   ],

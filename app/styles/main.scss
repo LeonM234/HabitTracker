@@ -40,7 +40,7 @@
 
 // ----- BODY STYLES -----
 body {
-  @include backColor(30);
+  background-color: rgb(54, 63, 69);
 }
 
 h1, h3, p, label {
@@ -70,5 +70,47 @@ h1, h3, p, label {
 
   #emailLabel, #passwordLabel {
     margin: 0 12%;
+  }
+}
+
+// ----- HABIT TRACKER PAGE -----
+#my-habits {
+  text-align: center;
+}
+
+#fitness-icon, #brain-icon, #skill-icon, #badhabit-icon {
+  background-color: white;
+  border-radius: 20%;
+  height: 50%;
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+
+// ----- HABITMARKS PAGE -----
+#habit-div{
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  height: 300px;
+  width: 300px;
+}
+
+.habit-marks-row {
+  margin: 2px;
+
+  td {
+    height: 10%;
+    width: 10%;
+    background-color: #CFD8DC;
+    margin: 2px;
+    border: 1px dotted #727272;
+    color: #FF5722;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    font-family: 'Nothing You Could Do', cursive;
   }
 }

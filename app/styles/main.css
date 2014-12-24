@@ -27,7 +27,7 @@
   width: 5%; }
 
 body {
-  background-color: #1e1e1e; }
+  background-color: #363f45; }
 
 h1, h3, p, label {
   color: #d7d7d7; }
@@ -46,5 +46,38 @@ h1, h3, p, label {
     margin: 0 auto; }
   #asideCheck #emailLabel, #asideCheck #passwordLabel {
     margin: 0 12%; }
+
+#my-habits {
+  text-align: center; }
+
+#fitness-icon, #brain-icon, #skill-icon, #badhabit-icon {
+  background-color: white;
+  border-radius: 20%;
+  height: 50%;
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 10%; }
+
+#habit-div {
+  height: 100%;
+  width: 100%; }
+
+table {
+  height: 300px;
+  width: 300px; }
+
+.habit-marks-row {
+  margin: 2px; }
+  .habit-marks-row td {
+    height: 10%;
+    width: 10%;
+    background-color: #CFD8DC;
+    margin: 2px;
+    border: 1px dotted #727272;
+    color: #FF5722;
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+    font-family: 'Nothing You Could Do', cursive; }
 
 /*# sourceMappingURL=main.css.map */

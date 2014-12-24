@@ -99,6 +99,14 @@
     .controller('HabitController', function($http, $routeParams){
       var vm = this;
       var id = $routeParams.id;
+
+      $('td').on('click', function(){
+        if ($(this).html() === "X"){
+          $(this).html("").removeClass("habit-x");
+        } else {
+          $(this).html("X").addClass("habit-x");
+        }
+      })
   })
 
   // Add ChangePasswordController
