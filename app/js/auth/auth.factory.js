@@ -1,7 +1,6 @@
 ;(function() {
   "use strict";
   angular.module('trackerApp')
-  // ----- FACTORIES -----
     .factory('authFactory', function($rootScope, $location, FIREBASE_URL){
       var factory = {},
       ref = new Firebase(FIREBASE_URL);
@@ -11,6 +10,8 @@
       factory.requireLogin = function(){
         if (!_isLoggedIn()) {
           $location.path('/login');
+        } else if (_hasTemporaryPassword()){
+          $location.path('changepassword');
         }
       };
 
@@ -22,6 +23,10 @@
 
       function _isLoggedIn(){
         return Boolean(ref.getAuth());
+      }
+
+      function _hasTemporaryPassword(){
+        return ref.getAuth().password.isTemporaryPassword;
       }
 
       factory.changePassword = function(oldPass, newPass, cb){

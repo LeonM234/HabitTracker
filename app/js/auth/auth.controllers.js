@@ -2,22 +2,16 @@
   "use strict";
 
   angular.module('trackerApp')
-
-    // ----- CONTROLLERS -----
-    .controller('HabitController', function($http, $routeParams){
+    .controller('ChangePasswordController', function($scope, $location, authFactory){
       var vm = this;
-      var id = $routeParams.id;
+      vm.changePassword = function(){
+        authFactory.changePassword(vm.oldPassword, vm.newPassword, function(){
+          $location.path('/logout');
+          $scope.apply();
+        })
+      };
+    })
 
-      $('td').on('click', function(){
-        if ($(this).html() === "X"){
-          $(this).html("").removeClass("habit-x");
-        } else {
-          $(this).html("X").addClass("habit-x");
-        }
-      })
-  })
-
-  // Add ChangePasswordController
     .controller('LoginController', function(authFactory, $scope, $location){
       var vm = this;
 

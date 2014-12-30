@@ -15,11 +15,11 @@
 <body>
   <div class="splash-nav">
     <a class="btn btn-primary navbtn" href="/#/">HOME</a>
-    <a class="btn btn-primary navbtn" href="/#/tracker">Habit Tracker</a>
-    <a class="btn btn-primary navbtn" href="/#/stats">Progress Statistics</a>
-    <a class="btn btn-primary navbtn" href="/#/paths">Pick a Path</a>
+    <a class="btn btn-primary navbtn" href="/#/habits" ng-show="user">Habit Tracker</a>
+    <a class="btn btn-primary navbtn" href="/#/stats" ng-show="user">Progress Statistics</a>
+    <a class="btn btn-primary navbtn" href="/#/paths" ng-show="user">Pick a Path</a>
     <a class="btn btn-primary navbtn" href="/#/adviceandresources">Advice + Resources</a>
-    <a class="btn btn-success navbtn" id="newHabit" href="/#/newhabit">Create Habit</a>
+    <a class="btn btn-success navbtn" id="newHabit" href="/#/newhabit" ng-show="user">Create Habit</a>
     <a class="login btn btn-success" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body" ng-hide="user">Login / Register</a>
     <a class="login btn btn-success" href="/#/logout" ng-show="user">Logout</a>
   </div>
@@ -36,10 +36,14 @@
   <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
   <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="main.config.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/auth.factory.js"></script>
-  <script src="js/constants.js"></script>
+  <script src="js/main.config.js"></script>
+  <script src="js/main.constants.js"></script>
+  <script src="js/auth/auth.controllers.js"></script>
+  <script src="js/auth/auth.factory.js"></script>
+  <script src="js/auth/auth.routes.js"></script>
+  <script src="js/habits/habit.controllers.js"></script>
+  <script src="js/habits/habit.factory.js"></script>
+  <script src="js/habits/habit.config.js"></script>
 </body>
 </html>
 <!--ng-controller="HabitController as habitCtrl"-->
