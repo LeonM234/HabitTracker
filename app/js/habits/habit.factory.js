@@ -6,7 +6,7 @@
 
       function _habitsUrl(id){
         if(id) {
-          return FIREBASE_URL + 'users' + $rootScope.user.uid +
+          return FIREBASE_URL + '/users/' + $rootScope.user.uid +
           '/habits/' + id + '.json?auth=' + $rootScope.user.token;
         } else {
           return FIREBASE_URL + '/users/' + $rootScope.user.uid +
@@ -65,11 +65,20 @@
         }
 
       var difficultyOptions = {
-        veryhard: 'Very Hard',
-        hard: 'Hard',
-        medium: 'Medium',
-        easy: 'Easy',
-        veryeasy: 'Very Easy'
+        a_veryeasy: 'Very Easy',
+        b_easy: 'Easy',
+        c_medium: 'Medium',
+        d_hard: 'Hard',
+        e_veryhard: 'Very Hard'
+      };
+
+      var habitCategories = {
+        a_health: 'Health',
+        b_fitness: 'Fitness',
+        c_mind: 'Mind',
+        d_skill: 'Skill',
+        e_remove: 'Kill a Bad Habit',
+        f_other: 'Other'
       };
 
       return {
@@ -78,6 +87,7 @@
         getAllHabits: getAllHabits,
         createHabit: createHabit,
         deleteHabit: deleteHabit,
+        habitCategories: habitCategories,
         difficultyOptions: difficultyOptions
       };
   })

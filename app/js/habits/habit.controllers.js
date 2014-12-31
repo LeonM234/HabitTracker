@@ -56,6 +56,8 @@
 
     vm.difficultyOptions = habitFactory.difficultyOptions;
 
+    vm.habitCategories = habitFactory.habitCategories;
+
     function _freshHabit(){
       return {
         medium: 'Medium'
