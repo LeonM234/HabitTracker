@@ -27,6 +27,7 @@
     };
 
     vm.difficultyOptions = habitFactory.difficultyOptions;
+    vm.habitCategories = habitFactory.habitCategories;
 
   })
 
@@ -60,18 +61,31 @@
 
     function _freshHabit(){
       return {
-        medium: 'Medium'
+        difficulty: 'Medium'
       };
     }
 
-    // ----- OTHER FUNCTIONS -----
+    // ----- GRID FUNCTIONS -----
     $('td').on('click', function(){
       if ($(this).html() === "X"){
         $(this).html("").removeClass("habit-x");
+        console.log("habitsCompleted");
       } else {
         $(this).html("X").addClass("habit-x");
+        console.log("habitsCompleted");
       }
     });
+
+    vm.percentCompleted = function() {
+      var habitsCompleted = 0;
+
+      $('tr').each(function(){
+        $(this).find('.habit-x').each(function(){
+          habitsCompleted++;
+          return habitsCompleted;
+        });
+      });
+    }
 
   });
 }());

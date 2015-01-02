@@ -1,10 +1,10 @@
 <div id="asideCheck" class="aside">
   <form name="loginForm" ng-submit="loginCtrl.login()" ng-controller="LoginController as loginCtrl" novalidate>
-    <div class="form-group" ng-class="{'has-error': loginForm.$dirty && !loginCtrl.email}">
+    <div class="form-group" id="emailDiv" ng-class="{'has-error': loginForm.$dirty && !loginCtrl.email}">
       <label id="emailLabel">Email Address</label>
       <input class="form-control" type="email" ng-model="loginCtrl.email" required>
     </div>
-    <div class="form-group" ng-class="{'has-error': loginForm.$dirty && !loginCtrl.password}">
+    <div class="form-group" id="pwDiv" ng-class="{'has-error': loginForm.$dirty && !loginCtrl.password}">
       <label id="passwordLabel">Password</label>
       <input class="form-control" type="password" ng-model="loginCtrl.password" required>
     </div>

@@ -21,6 +21,9 @@
   margin-bottom: 20px;
   margin-top: 0px;
   min-height: 550px; }
+  .jumbotron h1, .jumbotron h2 {
+    color: white;
+    font-family: 'BenchNine', sans-serif; }
 
 #splashFlame {
   height: 5%;
@@ -29,8 +32,21 @@
 body {
   background-color: #363f45; }
 
-h1, h3, p, label {
+h1, h2, h3, h4, p, label {
   color: #d7d7d7; }
+
+#firstStep {
+  text-align: center; }
+  #firstStep h1 {
+    color: white;
+    font-family: 'BenchNine', sans-serif; }
+
+.habitIcons p {
+  color: white;
+  font-family: 'BenchNine', sans-serif;
+  margin-top: 4%; }
+.habitIcons img {
+  margin-left: 25%; }
 
 #asideCheck {
   background-color: #323232;
@@ -41,6 +57,8 @@ h1, h3, p, label {
   #asideCheck .form-control {
     max-width: 75%;
     margin: 0 auto; }
+  #asideCheck #emailDiv, #asideCheck #pwDiv {
+    padding-left: 10%; }
   #asideCheck #loginButtons {
     max-width: 65%;
     margin: 0 auto; }
@@ -89,5 +107,8 @@ table {
 
 .control-label {
   color: #00BCD4; }
+
+.advice {
+  margin-left: 23%; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,3 @@
-<form name="newHabitForm" class="form-horizontal" ng-submit="myForm.$valid && habit.addNewHabit()" novalidate>
-
   <!-- Attempting Live Preview
   <section class="row well live-preview">
     <aside class="col-xs-3">
@@ -21,22 +19,23 @@
     </div>
   </section> -->
 
-  <!-- My Original Form -> Categories & Difficulty aren't displaying options yet -->
-  <div class="form-group" ng-class="{'has-error': !habit.newHabit.name}">
+  <!-- My Original Form -->
+<form name="newHabitForm" class="form-horizontal" ng-submit="newHabitForm.$valid && habitCtrl.addNewHabit()" validate>
+  <div class="form-group" ng-class="{'has-error': !habitCtrl.newHabit.name}">
     <label class="control-label">Name</label>
-    <input class="form-control" type="text" ng-model="habit.newHabit.name" placeholder="Enter Name of Habit" required>
+    <input class="form-control" type="text" ng-model="habitCtrl.newHabit.name" placeholder="Enter Name of Habit">
   </div>
-  <div class="form-group" ng-class="{'has-error': !habit.newHabit.reasons}">
+  <div class="form-group" ng-class="{'has-error': !habitCtrl.newHabit.reasons}">
     <label class="control-label">Reasons</label>
-    <input class="form-control" type="text" ng-model="habit.newHabit.reasons" placeholder="Reason for Pursuing this Habit" required>
+    <input class="form-control" type="text" ng-model="habitCtrl.newHabit.reasons" placeholder="Reason for Pursuing this Habit">
   </div>
-  <div class="form-group" ng-class="{'has-error': !habit.newHabit.notes}">
+  <div class="form-group" ng-class="{'has-error': !habitCtrl.newHabit.notes}">
     <label class="control-label">Notes</label>
-    <textarea class="form-control" rows="3" ng-model="habit.newHabit.notes" placeholder="Habit Notes"></textarea>
+    <textarea class="form-control" rows="3" ng-model="habitCtrl.newHabit.notes" placeholder="Habit Notes"></textarea>
   </div>
   <div class="form-group">
     <label class="control-label">Category</label>
-    <select ng-model="habit.newHabit.category" class="form-control">
+    <select ng-model="habitCtrl.newHabit.category" class="form-control">
       <option value="{{val}}" ng-repeat="(val, text) in habitCtrl.habitCategories">
         {{text}}
       </option>
@@ -44,13 +43,13 @@
   </div>
   <div class="form-group">
     <label class="control-label">Difficulty</label>
-    <select ng-model="habit.newHabit.difficulty" class="form-control">
+    <select ng-model="habitCtrl.newHabit.difficulty" class="form-control">
       <option value="{{val}}" ng-repeat="(val, text) in habitCtrl.difficultyOptions">
         {{text}}
       </option>
     </select>
   </div>
-  <input type="submit" id="addHabit" class="btn btn-danger" value="Add Habit" ng-disabled="myForm.$invalid">
+  <input type="submit" id="addHabit" class="btn btn-danger" value="Add Habit" ng-disabled="myForm.$invalid"/>
 </form>
 
 <!--

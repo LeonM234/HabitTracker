@@ -31,6 +31,10 @@
   margin-bottom: 20px;
   margin-top: 0px;
   min-height: 550px;
+  h1, h2 {
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+  }
 }
 
 #splashFlame {
@@ -43,8 +47,28 @@ body {
   background-color: rgb(54, 63, 69);
 }
 
-h1, h3, p, label {
+h1, h2, h3, h4, p, label {
   @include textColor;
+}
+
+// ----- LANDING PAGE -----
+#firstStep {
+  text-align: center;
+  h1 {
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+  }
+}
+
+.habitIcons {
+  p{
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+    margin-top: 4%;
+  }
+  img {
+    margin-left: 25%;
+  }
 }
 
 // ---- MODAL STYLES -----
@@ -61,6 +85,10 @@ h1, h3, p, label {
   .form-control{
     max-width: 75%;
     margin: 0 auto;
+  }
+
+  #emailDiv, #pwDiv {
+    padding-left: 10%;
   }
 
   #loginButtons {
@@ -127,4 +155,9 @@ table {
 
 .control-label {
   color: #00BCD4;
+}
+
+// ----- ADVICE AND RESOURCES PAGE -----
+.advice {
+  margin-left: 23%;
 }

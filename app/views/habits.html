@@ -1,13 +1,36 @@
 <h1 id="my-habits">My Habits</h1>
-<div class="col-xs-3 habitIcons">
+<table>
+  <thead>
+    <tr>
+      <th>Habit Name</th>
+      <th>Reasons</th>
+      <th>Notes</th>
+      <th>Category</th>
+      <th>Difficulty</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(habitId, habit) in habitCtrl.habits">
+      <td>{{habit.name}}</td>
+      <td>{{habit.reasons}}</td>
+      <td>{{habit.notes}}</td>
+      <td>{{habit.category}}</td>
+      <td>{{habit.difficulty}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<!--<div class="col-xs-3 habitIcons">
   <a href="/#/grid"><img id="fitness-icon" src="images/dumbbell3.svg" alt="Fitness Icon"></a>
 </div>
 <div class="col-xs-3 habitIcons">
-  <img id="brain-icon" src="images/gear25.svg" alt="Fitness Icon">
+  <img id="brain-icon" src="images/gear25.svg" alt="Brain Icon">
 </div>
 <div class="col-xs-3 habitIcons">
-  <img id="skill-icon" src="images/archery1.svg" alt="Fitness Icon">
+  <img id="skill-icon" src="images/archery1.svg" alt="Skill Icon">
 </div>
 <div class="col-xs-3 habitIcons">
-  <img id="badhabit-icon" src="images/close16.svg" alt="Fitness Icon">
-</div>
+  <img id="badhabit-icon" src="images/close16.svg" alt="BadHabit Icon">
+</div>-->

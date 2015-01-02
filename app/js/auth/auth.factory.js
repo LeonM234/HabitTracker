@@ -1,7 +1,7 @@
 ;(function() {
   "use strict";
   angular.module('trackerApp')
-    .factory('authFactory', function($rootScope, $location, FIREBASE_URL){
+    .factory('authFactory', function($rootScope, $location, $http, FIREBASE_URL){
       var factory = {},
       ref = new Firebase(FIREBASE_URL);
 

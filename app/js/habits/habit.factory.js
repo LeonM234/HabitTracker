@@ -48,6 +48,7 @@
         $http.post(_habitsUrl(), habit)
           .success(function(data){
             cb(data);
+            console.log('sending data');
           })
           .error(function(err){
             console.log(err);

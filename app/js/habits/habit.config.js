@@ -9,14 +9,26 @@
           controllerAs: "habitCtrl",
           private: true
         })
-        .when('/grid', {
-          templateUrl: "views/grid.html",
+        .when('/newhabit', {
+          templateUrl: "views/newhabit.html",
           controller: "HabitController",
           controllerAs: "habitCtrl",
           private: true
         })
-        .when('/newhabit', {
+        .when('/habits/:id', {
+          templateUrl: "views/show.html",
+          controller: "ShowController",
+          controllerAs: "showCtrl",
+          private: true
+        })
+        .when('/habits/:id/edit', {
           templateUrl: "views/newhabit.html",
+          controller: "EditController",
+          controllerAs: "habitCtrl",
+          private: true
+        })
+        .when('/grid', {
+          templateUrl: "views/grid.html",
           controller: "HabitController",
           controllerAs: "habitCtrl",
           private: true
