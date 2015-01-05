@@ -5,7 +5,9 @@
 
 .navbtn {
   margin: 10px 0;
-  background-color: #FF9800; }
+  background-color: #FF9800;
+  font-family: 'BenchNine', sans-serif;
+  font-size: 125%; }
 
 #newHabit {
   background-color: #00BCD4; }
@@ -66,7 +68,22 @@ h1, h2, h3, h4, p, label {
     margin: 0 12%; }
 
 #my-habits {
-  text-align: center; }
+  text-align: center;
+  font-family: 'BenchNine', sans-serif; }
+
+.tracker-btn {
+  background-color: #FF9800; }
+
+.table-hover th {
+  color: #FF9800;
+  font-family: 'BenchNine', sans-serif;
+  font-size: 125%; }
+
+.tracker-tbody {
+  background: #B2EBF2; }
+  .tracker-tbody td {
+    color: #FF5722;
+    font-family: 'BenchNine', sans-serif; }
 
 #fitness-icon, #brain-icon, #skill-icon, #badhabit-icon {
   background-color: white;
@@ -76,27 +93,31 @@ h1, h2, h3, h4, p, label {
   margin-left: 10%;
   margin-top: 10%; }
 
-#habit-div {
+#percdone-h4 {
+  text-align: center; }
+
+#percent-done {
+  color: #00BCD4; }
+
+#grid-div {
   height: 100%;
   width: 100%; }
-
-table {
-  height: 300px;
-  width: 300px; }
-
-.habit-marks-row {
-  margin: 2px; }
-  .habit-marks-row td {
-    height: 10%;
-    width: 10%;
-    background-color: #CFD8DC;
-    margin: 2px;
-    border: 1px dotted #727272;
-    color: #FF5722;
-    text-align: center;
-    font-size: 150%;
-    font-weight: bold;
-    font-family: 'Nothing You Could Do', cursive; }
+  #grid-div table {
+    height: 400px;
+    width: 600px; }
+  #grid-div .habit-marks-row {
+    margin: 2px; }
+    #grid-div .habit-marks-row td {
+      height: 10%;
+      width: 10%;
+      background-color: #CFD8DC;
+      margin: 2px;
+      border: 1px dotted #727272;
+      color: #FF5722;
+      text-align: center;
+      font-size: 150%;
+      font-weight: bold;
+      font-family: 'Nothing You Could Do', cursive; }
 
 .form-group {
   max-width: 75%;

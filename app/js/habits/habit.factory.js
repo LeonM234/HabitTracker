@@ -17,7 +17,7 @@
       function getHabit(id, cb){
         $http.get(_habitsUrl(id))
           .success(function(data){
-            $location.path('/');
+            cb(data);
           })
           .error(function(err){
             console.log(err);
@@ -27,7 +27,7 @@
       function editHabit(id, habit){
         $http.put(_habitsUrl(id), habit)
           .success(function(data){
-            $location.path('/');
+            $location.path('/habits');
           })
           .error(function(err){
             console.log(err);
@@ -48,7 +48,8 @@
         $http.post(_habitsUrl(), habit)
           .success(function(data){
             cb(data);
-            console.log('sending data');
+            $location.path('/habits');
+            console.log('sending habit to firebase');
           })
           .error(function(err){
             console.log(err);
@@ -66,20 +67,19 @@
         }
 
       var difficultyOptions = {
-        a_veryeasy: 'Very Easy',
-        b_easy: 'Easy',
-        c_medium: 'Medium',
-        d_hard: 'Hard',
-        e_veryhard: 'Very Hard'
+        Easy: 'Easy',
+        Medium: 'Medium',
+        Rough: 'Rough',
+        Spartan: 'Spartan'
       };
 
       var habitCategories = {
-        a_health: 'Health',
-        b_fitness: 'Fitness',
-        c_mind: 'Mind',
-        d_skill: 'Skill',
-        e_remove: 'Kill a Bad Habit',
-        f_other: 'Other'
+        Health: 'Health',
+        Fitness: 'Fitness',
+        Mind: 'Mind',
+        Skill: 'Skill',
+        Removal: 'Remove a Bad Habit',
+        Other: 'Other'
       };
 
       return {

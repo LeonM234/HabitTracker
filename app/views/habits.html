@@ -1,23 +1,25 @@
 <h1 id="my-habits">My Habits</h1>
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Habit Name</th>
       <th>Reasons</th>
-      <th>Notes</th>
       <th>Category</th>
       <th>Difficulty</th>
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="tracker-tbody">
     <tr ng-repeat="(habitId, habit) in habitCtrl.habits">
-      <td>{{habit.name}}</td>
-      <td>{{habit.reasons}}</td>
-      <td>{{habit.notes}}</td>
-      <td>{{habit.category}}</td>
-      <td>{{habit.difficulty}}</td>
-      <td></td>
+      <td class="lead">{{habit.name}}</td>
+      <td class="lead">{{habit.reasons}}</td>
+      <td class="lead">{{habit.category}}</td>
+      <td class="lead">{{habit.difficulty}}</td>
+      <td>
+        <a class="tracker-btn btn btn-primary" href="/#/habits/{{habitId}}">Show More</a>
+        <a class="tracker-btn btn btn-primary" href="/#/habits/{{habitId}}/edit">Edit</a>
+        <button class="btn btn-danger" ng-click="habitCtrl.removeHabit(habitId)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>

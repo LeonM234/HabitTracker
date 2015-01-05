@@ -18,7 +18,7 @@
         .when('/habits/:id', {
           templateUrl: "views/show.html",
           controller: "ShowController",
-          controllerAs: "showCtrl",
+          controllerAs: "show",
           private: true
         })
         .when('/habits/:id/edit', {
