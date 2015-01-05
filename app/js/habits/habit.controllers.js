@@ -18,7 +18,7 @@
     var ref = new Firebase(FIREBASE_URL);
     vm.user = $rootScope.user.uid;
 
-    var grid = [["", "", "", "", "", "", "", "", "", ""],
+    vm.grid = [["", "", "", "", "", "", "", "", "", ""],
     ["", "", "", "", "", "", "", "", "", ""],
     ["", "", "", "", "", "", "", "", "", ""],
     ["", "", "", "", "", "", "", "", "", ""],
@@ -41,7 +41,7 @@
   }*/
 
   function gridUpload(id, grid){
-    ref.child('users').child(vm.user).child('habits').child(id).child('grid').set(grid)
+    ref.child('users').child(vm.user).child('habits').child(id).child('grid').set(grid);
     /*.success(function(){
       console.log("Set request success!");
     })
@@ -54,7 +54,7 @@
     gridUpload(id, grid);
   };
 
-  vm.updateGridState = function(grid, td){
+  vm.updateLocalGridState = function(grid, td){
     var vertical = Math.floor($(td).parent().index());
     var horizontal = $(td).index();
     console.log(vertical);
@@ -71,18 +71,28 @@
     if ($(this).html() === "X"){
       $(this).html("").removeClass("habit-x");
       vm.percentDone();
-      vm.updateGridState(grid, this);
+      vm.updateLocalGridState(grid, this);
       vm.uploadGrid();
     } else {
       $(this).html("X").addClass("habit-x");
       vm.percentDone();
-      vm.updateGridState(grid, this);
+      vm.updateLocalGridState(grid, this);
       vm.uploadGrid();
     }
   });
 
   // TODO: Loop through firebase grid representation, and populate local grid with X's and the right class
+  // Pull grid representation from FB
+  var gridLocation = ref.child('users').child(vm.user).child('habits').child(id).child('grid');
 
+  habitFactory.pullGridDown(id, FIREBASE_URL, vm.user, function(data){
+    vm.grid = data;
+    console.log(vm.grid);
+  });
+
+
+
+  // Calculate Percentage Completed
   vm.percentDone = function() {
     var habitsCompleted = 0;
     $('#grid-table tr').each(function(){

@@ -66,6 +66,18 @@
           });
         }
 
+      function pullGridDown(id, FIREBASE_URL, vmuser, cb){
+        var gridLocation = FIREBASE_URL + '/users/' + vmuser + '/habits/' + id + '/grid.json';
+        $http.get(gridLocation)
+        .success(function(data){
+          cb(data);
+          return gridLocation;
+        })
+        .error(function(err){
+          console.log(err);
+        });
+      }
+
       var difficultyOptions = {
         Easy: 'Easy',
         Medium: 'Medium',
@@ -89,7 +101,8 @@
         createHabit: createHabit,
         deleteHabit: deleteHabit,
         habitCategories: habitCategories,
-        difficultyOptions: difficultyOptions
+        difficultyOptions: difficultyOptions,
+        pullGridDown: pullGridDown
       };
   })
 }());

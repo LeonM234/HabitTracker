@@ -4,8 +4,8 @@
 <h3>REASONS: {{show.habit.reasons}}</h3>
 <h3>NOTES: {{show.habit.notes}}</h3>
 <div id="grid-div">
-  <table id="grid-table" ng-click="showCtrl.percentDone()">
-    <tr class="habit-marks-row">
+  <table id="grid-table" ng-click="show.percentDone()">
+    <tr class="habit-marks-row" >
       <td></td>
       <td></td>
       <td></td>
@@ -80,5 +80,5 @@
   </table>
 </div>
 <div class="col-xs-5">
-  <h4 id="percdone-h4">You have completed <span id="percent-done"> {{showCtrl.percentDone()}}% </span> of the journey towards making this habit permanent!</h4>
+  <h4 id="percdone-h4">You have completed <span id="percent-done"> {{show.percentDone()}}% </span> of the journey towards making this habit permanent!</h4>
 </div>
