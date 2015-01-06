@@ -4,7 +4,7 @@
   angular.module('trackerApp')
 
   // ----- SHOW CONTROLLER -----
-  .controller('ShowController', function(habitFactory, FIREBASE_URL, $rootScope, $routeParams, $http){
+  .controller('ShowController', function(habitFactory, FIREBASE_URL, $rootScope, $routeParams, $http, $scope){
     var vm = this;
     var id = $routeParams.id;
 
@@ -18,91 +18,43 @@
     var ref = new Firebase(FIREBASE_URL);
     vm.user = $rootScope.user.uid;
 
-    vm.grid = [["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", "", "", "", ""]];
-
-  /*vm.fbUpdateGrid = function(grid, id){
-    var xLocations = ref.child('users').child(vm.user).child('habits').child(id);
-    //xLocations.child('habitgrid').set(grid);
-    console.log(xLocations);
-  };
-
-  function _habitsUrl(id){ debugger
-    if(id) {
-      return FIREBASE_URL + '/users/' + $rootScope.user.uid +
-      '/habits/' + id + '/grid';
-    } else {
-      $location.path('/');
+    function gridUpload(){
+      ref.child('users').child(vm.user).child('habits').child(id).child('grid').set(angular.fromJson(angular.toJson(vm.grid)));
     }
-  }*/
 
-  function gridUpload(id, grid){
-    ref.child('users').child(vm.user).child('habits').child(id).child('grid').set(grid);
-    /*.success(function(){
-      console.log("Set request success!");
-    })
-    .error(function(err){
-      console.log(err);
-    });*/
-  }
+    // Local grid
+    vm.toggleX = function(row, column){
+      if (vm.grid[row][column] === "X"){
+        console.log(this);
+        vm.grid[row][column] = '';
+        vm.percentDone();
+        gridUpload();
+      } else {
+        vm.grid[row][column] = "X";
+        vm.percentDone();
+        gridUpload();
+      }
+    };
 
-  vm.uploadGrid = function(){
-    gridUpload(id, grid);
-  };
+    // Pull grid representation from FB
+    var gridLocation = ref.child('users').child(vm.user).child('habits').child(id).child('grid');
 
-  vm.updateLocalGridState = function(grid, td){
-    var vertical = Math.floor($(td).parent().index());
-    var horizontal = $(td).index();
-    console.log(vertical);
-    if ($(td).hasClass("habit-x")){
-      var x = $(td).text("X");
-      grid[vertical][horizontal] = "X";
-    } else {
-      console.log("Nothing here!");
-    }
-  };
-
-  // Local grid
-  $('td').on('click', function(){
-    if ($(this).html() === "X"){
-      $(this).html("").removeClass("habit-x");
-      vm.percentDone();
-      vm.updateLocalGridState(grid, this);
-      vm.uploadGrid();
-    } else {
-      $(this).html("X").addClass("habit-x");
-      vm.percentDone();
-      vm.updateLocalGridState(grid, this);
-      vm.uploadGrid();
-    }
-  });
-
-  // TODO: Loop through firebase grid representation, and populate local grid with X's and the right class
-  // Pull grid representation from FB
-  var gridLocation = ref.child('users').child(vm.user).child('habits').child(id).child('grid');
-
-  habitFactory.pullGridDown(id, FIREBASE_URL, vm.user, function(data){
-    vm.grid = data;
-    console.log(vm.grid);
-  });
-
-
-
-  // Calculate Percentage Completed
-  vm.percentDone = function() {
-    var habitsCompleted = 0;
-    $('#grid-table tr').each(function(){
-      $(this).find('.habit-x').each(function(){
-        habitsCompleted++;
-      });
+    habitFactory.pullGridDown(id, FIREBASE_URL, vm.user, function(data){
+      vm.grid = data;
+      console.log(vm.grid);
     });
-    return Math.round((habitsCompleted / 60) * 100);
-  };
-  })
+
+    // Calculate Percentage Completed
+    vm.percentDone = function() {
+      var habitsCompleted = 0;
+      $('#grid-table tr').each(function(){
+        $(this).find('.habit-x').each(function(){
+          habitsCompleted++;
+        });
+      });
+      return Math.round((habitsCompleted / 60) * 100);
+    };
+    })
 
   // ----- EDIT CONTROLLER -----
   .controller('EditController', function($routeParams, habitFactory){

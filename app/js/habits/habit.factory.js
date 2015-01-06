@@ -45,11 +45,18 @@
       }
 
       function createHabit(habit, cb){
+        var grid = [["X", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""],
+        ["", "", "", "", "", "", "", "", "", ""]];
+        habit.grid = grid;
         $http.post(_habitsUrl(), habit)
           .success(function(data){
             cb(data);
             $location.path('/habits');
-            console.log('sending habit to firebase');
+            console.log('sending habit and grid to firebase');
           })
           .error(function(err){
             console.log(err);

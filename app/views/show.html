@@ -5,77 +5,8 @@
 <h3>NOTES: {{show.habit.notes}}</h3>
 <div id="grid-div">
   <table id="grid-table" ng-click="show.percentDone()">
-    <tr class="habit-marks-row" >
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="habit-marks-row">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="habit-marks-row">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="habit-marks-row">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="habit-marks-row">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr class="habit-marks-row">
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr class="habit-marks-row" ng-repeat="(rowIndex, rows) in show.grid">
+      <td ng-repeat="(colIndex, cell) in rows track by $index" ng-click="show.toggleX(rowIndex, colIndex)" ng-class="{'habit-x': cell}" >{{cell}}</td>
     </tr>
   </table>
 </div>
