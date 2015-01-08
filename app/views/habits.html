@@ -1,4 +1,4 @@
-<h1 id="my-habits">My Habits</h1>
+<h1 id="my-habits" class="nav-margin-fix">My Habits</h1>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -6,7 +6,8 @@
       <th>Reasons</th>
       <th>Category</th>
       <th>Difficulty</th>
-      <th></th>
+      <th>Progress</th>
+      <th>Options</th>
     </tr>
   </thead>
   <tbody class="tracker-tbody">
@@ -15,6 +16,7 @@
       <td class="lead">{{habit.reasons}}</td>
       <td class="lead">{{habit.category}}</td>
       <td class="lead">{{habit.difficulty}}</td>
+      <td class="lead"></td>
       <td>
         <a class="tracker-btn btn btn-primary" href="/#/habits/{{habitId}}">Show More</a>
         <a class="tracker-btn btn btn-primary" href="/#/habits/{{habitId}}/edit">Edit</a>

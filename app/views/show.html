@@ -1,15 +1,34 @@
-<h3>NAME: {{show.habit.name}}</h3>
-<h3>TYPE: {{show.habit.category}}</h3>
-<h3>DIFFICULTY: {{show.habit.difficulty}}</h3>
-<h3>REASONS: {{show.habit.reasons}}</h3>
-<h3>NOTES: {{show.habit.notes}}</h3>
-<div id="grid-div">
+<div id="show-top" class="col-xs-12 center-block">
+  <h3 class="nav-margin-fix lead showhabit-title">HABIT</h3>
+  <h1 id="habit-name">{{show.habit.name}}</h1>
+</div>
+<div class="col-xs-12 center-block">
+  <h3 class="lead showhabit-title">MY REASONS</h3>
+  <h3 class="lead">{{show.habit.reasons}}</h3>
+</div>
+<div class="col-xs-12 center-block">
+  <h4 id="percdone-h4">You have completed <span id="percent-done"> {{show.percentDone()}}% </span> of the journey towards making this habit permanent!</h4>
+</div>
+
+<div class="col-xs-4 pull-left">
+  <h3 class="lead showhabit-title">TYPE</h3>
+  <h3 class="lead">{{show.habit.category}}</h3>
+</div>
+
+<div class="col-xs-4 pull-right">
+  <h3 class="lead showhabit-title text-right">DIFFICULTY</h3>
+  <h3 class="lead text-right">{{show.habit.difficulty}}</h3>
+</div>
+
+<div id="grid-div" class="col-xs-5">
   <table id="grid-table" ng-click="show.percentDone()">
     <tr class="habit-marks-row" ng-repeat="(rowIndex, rows) in show.grid">
       <td ng-repeat="(colIndex, cell) in rows track by $index" ng-click="show.toggleX(rowIndex, colIndex)" ng-class="{'habit-x': cell}" >{{cell}}</td>
     </tr>
   </table>
 </div>
-<div class="col-xs-5">
-  <h4 id="percdone-h4">You have completed <span id="percent-done"> {{show.percentDone()}}% </span> of the journey towards making this habit permanent!</h4>
+
+<div class="col-xs-12 center-block">
+  <h3 class="showhabit-title text-center">NOTES</h3>
+  <h3 class="lead text-center">{{show.habit.notes}}</h3>
 </div>

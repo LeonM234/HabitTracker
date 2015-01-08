@@ -3,26 +3,57 @@
 @mixin backColor($num) { background-color: rgb($num, $num, $num); }
 
 // ----- NAV STYLES -----
-.splash-nav{
-  @include backColor(50);
-  width: 100%;
-  padding-left: 5px;
+.nav-margin-fix {
+  margin-top: 75px;
 }
 
-.navbtn {
-  margin: 10px 0;
-  background-color: #FF9800;
-  font-family: 'BenchNine', sans-serif;
-  font-size: 125%;
+#navfire {
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  vertical-align: middle;
+  margin-top: 12px;
+  margin-right: 5px;
 }
 
-#newHabit {
-  background-color: #00BCD4;
+.navbar-inverse .navbar-nav>li>a {
+  color: #FFF;
+  margin-top: 3px;
+  margin-bottom: 0px;
 }
 
-.login {
-  float: right;
-  margin: 10px 10px;
+.navbar-inverse .navbar-nav>li>a:hover {
+  color: red;
+}
+
+#forge {
+  color: #FFF;
+  margin-top: 5px;
+}
+
+#forge:hover {
+  color: red;
+}
+
+.navbar-right~.navbar-right {
+  margin-top: 12px;
+  margin-botom: 0px;
+  color: #FFF;
+}
+
+.navbar-right~.navbar-right:hover {
+  color: #CDDC39;
+}
+
+.glyphicon-off {
+  margin-top: 20px;
+  color: #CDDC39;
+}
+
+@media (max-width: 768px) {
+  .glyphicon-off {
+    display: none;
+  }
 }
 
 // ----- JUMBOTRON STYLES -----
@@ -67,6 +98,7 @@ h1, h2, h3, h4, p, label {
     color: white;
     font-family: 'BenchNine', sans-serif;
     margin-top: 4%;
+    display: inline;
   }
   img {
     margin-left: 25%;
@@ -74,7 +106,7 @@ h1, h2, h3, h4, p, label {
 }
 
 // ---- MODAL STYLES -----
-// ADD BOOTSTRAP COLUMNS TO THE MODAL STUFF TO ALIGN IT WHEN HOME --> MUCH EASIER
+// ADD BOOTSTRAP COLUMNS TO THE MODAL STUFF TO ALIGN IT --> MUCH EASIER
 #asideCheck {
   @include backColor(50);
   float: right;
@@ -138,6 +170,27 @@ h1, h2, h3, h4, p, label {
   margin-top: 10%;
 }
 
+// -----SHOW HABIT PAGE -----
+#show-top {
+  text-align: center;
+}
+
+#habit-name {
+  color: #8BC34A;
+}
+
+.showhabit-title{
+   color: #ff9547;
+}
+
+.pull-left {
+  margin-left: 5%;
+}
+
+.pull-right {
+  margin-right: 5%;
+}
+
 // ----- GRID -----
 #percdone-h4 {
   text-align: center;
@@ -162,7 +215,7 @@ h1, h2, h3, h4, p, label {
       background-color: #CFD8DC;
       margin: 2px;
       border: 1px dotted #727272;
-      color: #FF5722;
+      color: #00BCD4;
       text-align: center;
       font-size: 150%;
       font-weight: bold;
@@ -188,4 +241,12 @@ h1, h2, h3, h4, p, label {
 // ----- ADVICE AND RESOURCES PAGE -----
 .advice {
   margin-left: 23%;
+}
+
+.a-and-r {
+  color: #ff9547;
+}
+
+.advice-preamble {
+  text-align: center;
 }

@@ -52,7 +52,7 @@
           habitsCompleted++;
         });
       });
-      return Math.round((habitsCompleted / 60) * 100);
+      return Math.round(((habitsCompleted  + 1)/ 60) * 100);
     };
     })
 

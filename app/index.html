@@ -14,16 +14,61 @@
   <title>Forge</title>
 </head>
 <body>
-  <div class="splash-nav">
-    <a class="btn btn-primary navbtn lead" href="/#/">HOME</a>
-    <a class="btn btn-primary navbtn lead" href="/#/habits" ng-show="user">Habit Tracker</a>
-    <a class="btn btn-primary navbtn lead" href="/#/stats" ng-show="user">Progress Statistics</a>
-    <a class="btn btn-primary navbtn lead" href="/#/paths" ng-show="user">Pick a Path</a>
-    <a class="btn btn-primary navbtn lead" href="/#/adviceandresources">Advice + Resources</a>
-    <a class="btn btn-success navbtn lead" id="newHabit" href="/#/newhabit" ng-show="user">Create Habit</a>
-    <a class="login btn btn-success lead" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body" ng-hide="user">Login / Register</a>
-    <a class="login btn btn-success lead" href="/#/logout" ng-show="user">Logout</a>
+  <!-- Navbar Start
+  <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+    <a href="/#/"><img alt="Brand" class="navbar-left" src="/images/burn5transparent2.png" id="navfire"></a>
+    <a class="lead vcenter navbar-left" href="/#/">FORGE</a>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav col-xs-12">
+          <li><a class="lead vcenter" href="/#/habits" ng-show="user">Habit Tracker</a></li>
+          <li><a class="lead vcenter active" href="/#/stats" ng-show="user">Progress Statistics</a></li>
+          <li><a class="lead vcenter" href="/#/adviceandresources">Advice + Resources</a></li>
+          <li><a class="lead vcenter" id="newHabit" href="/#/newhabit" ng-show="user">Create Habit </a></li>
+          <li><a class="glyphicon glyphicon-off"></a></li>
+          <li><a id="login" class="login navbar-btn navbar-right lead vcenter" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body" ng-hide="user">Login / Register</a></li>
+          <li><a id="logout" class="login navbar-btn navbar-right lead" ng-show="user">Logout</a></li>
+      </ul>
+    </div>
   </div>
+</div>
+  Navbar End -->
+  <!--NAVBAR -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/#/"><img alt="Brand" class="navbar-left" src="/images/burn5transparent2.png" id="navfire"></a>
+        <a href="/#/" class="navbar-brand" id="forge">FORGE</a>
+      </div> <!-- navbar header end -->
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <a class="navbar-right glyphicon glyphicon-off"></a>
+        <a class="lead navbar-right btn" data-template="views/login.html" data-animation="am-fade-and-slide-right" data-placement="right" bs-aside="aside" data-container="body" ng-hide="user">Login / Register</a>
+        <a id="logout" class="login navbar-btn navbar-right lead" href="/#/logout" ng-show="user">Logout</a>
+        <ul class="nav navbar-nav">
+          <li><a class="lead" href="/#/habits" ng-show="user">Habit Tracker</a></li>
+          <li><a href="/#/stats" class="lead" ng-show="user">Progress Statistics</a></li>
+          <li><a href="/#/adviceandresources" class="lead">Advice + Resources</a></li>
+          <li><a href="/#/newhabit" class="lead" ng-show="user">Create Habit</a></li>
+        </ul>
+      </div>
+    </div> <!-- container end -->
+  </nav> <!-- end navbar -->
+
   <div class="site-body">
     <div ng-view></div>
   </div>

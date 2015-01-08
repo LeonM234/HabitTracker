@@ -57,6 +57,7 @@
             cb();
           } else {
             console.log("Error logging in user:", error);
+            alert("Email or Password was incorrect!" + "\n" + "Please register first if you are a new user.");
           }
         }
       );

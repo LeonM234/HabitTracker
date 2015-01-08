@@ -20,7 +20,7 @@
   </section> -->
 
   <!-- My Original Form -->
-<form name="newHabitForm" class="form-horizontal" ng-submit="newHabitForm.$valid && habitCtrl.addNewHabit()" novalidate>
+<form name="newHabitForm" class="form-horizontal nav-margin-fix" ng-submit="newHabitForm.$valid && habitCtrl.addNewHabit()" novalidate>
   <div class="form-group" ng-class="{'has-error': !habitCtrl.newHabit.name}">
     <label class="control-label">Name</label>
     <input class="form-control" type="text" ng-model="habitCtrl.newHabit.name" placeholder="Enter Name of Habit" required>
