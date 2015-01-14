@@ -1,3 +1,25 @@
+<!--  <h1 class="title"> Pricing table </h1>
+  <div id="container">
+    <div class="pricetab">
+      <h1 class="pointer"> FREE </h1>
+      <div class="price">
+        <h2> Free </h2>
+      </div>
+      <div class="infos">
+        <h3> Premium Profile Listing </h3>
+        <h3> Unlimited File Access </h3>
+        <h3> Free Appointments </h3>
+        <h3> 0 Bonus Points every month</h3>
+        <h3> Customizable Profile Page</h3>
+        <h3> 1 month support</h3>
+      </div>
+      <div class="pricefooter">
+        <div class="button">
+          <a href="#"> Get started </a>
+        </div>
+      </div>
+    </div>
+  </div>-->
 <h1 id="my-habits" class="nav-margin-fix">My Habits</h1>
 <table class="table table-hover">
   <thead>
@@ -14,7 +36,7 @@
     <tr ng-repeat="(habitId, habit) in habitCtrl.habits">
       <td class="lead">{{habit.name}}</td>
       <td class="lead">{{habit.reasons}}</td>
-      <td class="lead">{{habit.category}}</td>
+      <td class="lead" id="category">{{habit.category}}</td>
       <td class="lead">{{habit.difficulty}}</td>
       <td class="lead"></td>
       <td>
@@ -25,16 +47,4 @@
     </tr>
   </tbody>
 </table>
-
-<!--<div class="col-xs-3 habitIcons">
-  <a href="/#/grid"><img id="fitness-icon" src="images/dumbbell3.svg" alt="Fitness Icon"></a>
-</div>
-<div class="col-xs-3 habitIcons">
-  <img id="brain-icon" src="images/gear25.svg" alt="Brain Icon">
-</div>
-<div class="col-xs-3 habitIcons">
-  <img id="skill-icon" src="images/archery1.svg" alt="Skill Icon">
-</div>
-<div class="col-xs-3 habitIcons">
-  <img id="badhabit-icon" src="images/close16.svg" alt="BadHabit Icon">
-</div>-->
+<h3 class="col-xs-12 text-center create-link btn btn-info"><a href="/#/newhabit"><span class="glyphicon glyphicon-fire"></span><br>CREATE A NEW HABIT</a><h3>

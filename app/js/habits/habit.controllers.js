@@ -48,13 +48,17 @@
     vm.percentDone = function() {
       var habitsCompleted = 0;
       $('#grid-table tr').each(function(){
-        $(this).find('.habit-x').each(function(){
-          habitsCompleted++;
+        $(this).find('td').each(function(){
+          if ($(this).text() == "X"){
+            habitsCompleted++;
+          }
         });
       });
-      return Math.round(((habitsCompleted  + 1)/ 60) * 100);
+      console.log(habitsCompleted);
+      return Math.round(((habitsCompleted)/ 60) * 100);
     };
     })
+
 
   // ----- EDIT CONTROLLER -----
   .controller('EditController', function($routeParams, habitFactory){

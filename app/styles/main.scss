@@ -23,7 +23,7 @@
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-  color: red;
+  color: #ff9547;
 }
 
 #forge {
@@ -32,7 +32,7 @@
 }
 
 #forge:hover {
-  color: red;
+  color: #ff9547;
 }
 
 .navbar-right~.navbar-right {
@@ -85,12 +85,21 @@ h1, h2, h3, h4, p, label {
 }
 
 // ----- LANDING PAGE -----
+
+
 #firstStep {
   text-align: center;
   h1 {
     color: white;
     font-family: 'BenchNine', sans-serif;
   }
+  #landing-forge {
+    color: #ff9547;
+  }
+}
+
+.landing-body {
+  margin-top: 3%;
 }
 
 .habitIcons {
@@ -98,11 +107,38 @@ h1, h2, h3, h4, p, label {
     color: white;
     font-family: 'BenchNine', sans-serif;
     margin-top: 4%;
-    display: inline;
+    margin-left: 1.5em;
   }
-  img {
-    margin-left: 25%;
+}
+
+#new-you {
+  margin-top: 10px;
+  h1 {
+    color: #8BC34A;
+    font-family: 'BenchNine', sans-serif;
   }
+}
+
+#ball-rolling {
+  margin-top: 100px;
+}
+
+.row {
+  margin-top: 5%;
+  //margin-left: 15%;
+  margin-left: 15%;
+  }
+
+@media (max-width: 768px) {
+  .second-img {
+    margin-top: 5%;
+  }
+}
+
+#landing-closing {
+  color: white;
+  font-family: 'BenchNine', sans-serif;
+  margin-top: 5%;
 }
 
 // ---- MODAL STYLES -----
@@ -136,9 +172,93 @@ h1, h2, h3, h4, p, label {
 }
 
 // ----- HABIT TRACKER PAGE -----
+
+/* General */
+/*.pointer{cursor:pointer;}
+/* Body */
+
+/*#container{
+  width:80%;
+  min-width:1100px;
+  min-height:500px;
+  margin:3% auto 0 auto;
+}
+.pricetab{
+  width:20%;
+  min-width:220px;
+  background: linear-gradient(#555, #444);
+  float:left;
+  margin-top:.2%;
+  box-shadow:1px 1px 5px rgba(0, 0, 0, .5);
+}
+.pricetabmid{
+  width:20%;
+  min-width:220px;
+  background: linear-gradient( #F9B84A, #ff9547);
+  float:left;
+  box-shadow:0 0  15px rgba(0, 0, 0, 1);
+  position:relative;
+}
+.priceheader{
+  width:100%;
+  height:60px;
+  background-image: -o-linear-gradient(bottom ,#444 , #555);
+  background-image: -webkit-linear-gradient(bottom ,#444 , #555);
+  background-image: -o-linear-gradient(bottom ,#444 , #555);
+  background-image: -moz-linear-gradient(bottom ,#444 , #555);
+  background-image: linear-gradient(to bottom , #444 , #555);
+  box-shadow:0 2px 12px rgba(0, 0, 0, .5);
+}
+.price{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:1px solid #ff9547;
+  margin:5% auto 0 auto;
+  text-align:center;
+}
+.pricemid{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:1px solid #444;
+  margin:5% auto 0 auto;
+  text-align:center;
+}
+.infos{
+  margin-top:10%;
+}
+.pricefooter{
+  width:100%;
+  height:50px;
+  margin-top:10%;
+  background:#333;
+}
+.pricefootermid{
+  width:100%;
+  height:50px;
+  margin-top:10%;
+  background:#fe9040;
+}
+.author{
+  width:10%;
+  min-width:150px;
+  height:40px;
+  background:rgba(0, 0, 0, .5);
+  overflow:hidden;
+  clear:both;
+  float:right;
+  position:fixed;
+  bottom:0;
+  right:0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;*/
+
 #my-habits {
   text-align: center;
   font-family: 'BenchNine', sans-serif;
+  color: #8BC34A;
 }
 
 .tracker-btn {
@@ -154,20 +274,22 @@ h1, h2, h3, h4, p, label {
 }
 
 .tracker-tbody {
-  background: #B2EBF2;
   td {
-    color: #FF5722;
+    color: #8BC34A;
     font-family: 'BenchNine', sans-serif;
   }
 }
 
-#fitness-icon, #brain-icon, #skill-icon, #badhabit-icon {
-  background-color: white;
-  border-radius: 20%;
-  height: 50%;
-  width: 50%;
-  margin-left: 10%;
-  margin-top: 10%;
+#category {
+  color: #00BCD4;
+}
+
+.create-link {
+  color: #8BC34A;
+  font-family: 'BenchNine', sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // -----SHOW HABIT PAGE -----
@@ -201,11 +323,13 @@ h1, h2, h3, h4, p, label {
 }
 
 #grid-div{
-  height: 100%;
+  height: 300px;
   width: 100%;
   table {
-    height: 400px;
-    width: 600px;
+    height: 300px;
+    width: 350px;
+    margin: 0 auto !important;
+    float: none !important;
   }
   .habit-marks-row {
     margin: 2px;
@@ -220,6 +344,8 @@ h1, h2, h3, h4, p, label {
       font-size: 150%;
       font-weight: bold;
       font-family: 'Nothing You Could Do', cursive;
+      cursor: pointer;
+      cursor: hand;
     }
   }
 }
