@@ -107,8 +107,11 @@ h1, h2, h3, h4, p, label {
     color: white;
     font-family: 'BenchNine', sans-serif;
     margin-top: 4%;
-    margin-left: 1.5em;
   }
+}
+
+.second {
+  padding-left: 5%;
 }
 
 #new-you {
@@ -123,9 +126,14 @@ h1, h2, h3, h4, p, label {
   margin-top: 100px;
 }
 
+.landing-body {
+  p {
+    text-align: center;
+  }
+}
+
 .row {
   margin-top: 5%;
-  //margin-left: 15%;
   margin-left: 15%;
   }
 
