@@ -14,7 +14,7 @@
 
     // ----- GRID FUNCTIONS -----
 
-    // Get habit grid up onto firebase
+    // get habit grid up onto firebase
     var ref = new Firebase(FIREBASE_URL);
     vm.user = $rootScope.user.uid;
 
@@ -22,7 +22,7 @@
       ref.child('users').child(vm.user).child('habits').child(id).child('grid').set(angular.fromJson(angular.toJson(vm.grid)));
     }
 
-    // Local grid
+    // local grid
     vm.toggleX = function(row, column){
       if (vm.grid[row][column] === "X"){
         console.log(this);
@@ -36,7 +36,7 @@
       }
     };
 
-    // Pull grid representation from FB
+    // pull grid representation from FB
     var gridLocation = ref.child('users').child(vm.user).child('habits').child(id).child('grid');
 
     habitFactory.pullGridDown(id, FIREBASE_URL, vm.user, function(data){
@@ -44,7 +44,7 @@
       console.log(vm.grid);
     });
 
-    // Calculate Percentage Completed
+    // calculate percentage completed
     vm.percentDone = function() {
       var habitsCompleted = 0;
       $('#grid-table tr').each(function(){
@@ -81,6 +81,7 @@
   // ----- HABIT CONTROLLER -----
   .controller('HabitController', function(habitFactory, FIREBASE_URL, $rootScope, $routeParams, $http){
     var vm = this;
+    var id = $routeParams.id;
 
     habitFactory.getAllHabits(function(data){
       vm.habits = data;
@@ -111,6 +112,36 @@
         difficulty: ''
       };
     }
+
+
+    /*vm.filter('habitlistPercentDone', function(){
+      return function(grid){
+        var xCounter = 0;
+        return grid.toLowerCase();
+        for (var i = 0; i < grid.length; i++){
+            if (grid[i] == "X"){
+              xCounter++;
+          }
+        }
+        return (xCounter / 60);
+
+      };
+    });*/
+
+    // get percent completion for each habit
+    /*
+    var ref = new Firebase(FIREBASE_URL); debugger
+    vm.user = $rootScope.user.uid;
+    var gridLocation = ref.child('users').child(vm.user).child('habits').child(id).child('grid');
+
+    habitFactory.pullGridDown(id, FIREBASE_URL, vm.user, function(data){
+      vm.grid = data;
+      console.log(vm.grid);
+    });
+
+    vm.habitlistPercentDone = function(data){
+
+    };*/
 
 
 

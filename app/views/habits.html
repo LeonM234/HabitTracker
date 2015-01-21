@@ -1,44 +1,22 @@
-<!--  <h1 class="title"> Pricing table </h1>
-  <div id="container">
-    <div class="pricetab">
-      <h1 class="pointer"> FREE </h1>
-      <div class="price">
-        <h2> Free </h2>
-      </div>
-      <div class="infos">
-        <h3> Premium Profile Listing </h3>
-        <h3> Unlimited File Access </h3>
-        <h3> Free Appointments </h3>
-        <h3> 0 Bonus Points every month</h3>
-        <h3> Customizable Profile Page</h3>
-        <h3> 1 month support</h3>
-      </div>
-      <div class="pricefooter">
-        <div class="button">
-          <a href="#"> Get started </a>
-        </div>
-      </div>
-    </div>
-  </div>-->
 <h1 id="my-habits" class="nav-margin-fix">My Habits</h1>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Habit Name</th>
-      <th>Reasons</th>
       <th>Category</th>
       <th>Difficulty</th>
-      <th>Progress</th>
-      <th>Options</th>
+      <th>Reasons</th>
+      <th>Notes</th>
+      <th id="options">Options</th>
     </tr>
   </thead>
   <tbody class="tracker-tbody">
     <tr ng-repeat="(habitId, habit) in habitCtrl.habits">
       <td class="lead">{{habit.name}}</td>
-      <td class="lead">{{habit.reasons}}</td>
       <td class="lead" id="category">{{habit.category}}</td>
       <td class="lead">{{habit.difficulty}}</td>
-      <td class="lead"></td>
+      <td class="lead reasons">{{habit.reasons}}</td>
+      <td class="lead" id="notes">{{habit.notes}}</td>
       <td>
         <a class="tracker-btn btn btn-primary" href="/#/habits/{{habitId}}">Show More</a>
         <a class="tracker-btn btn btn-primary" href="/#/habits/{{habitId}}/edit">Edit</a>
