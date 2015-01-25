@@ -89,7 +89,8 @@ h1, h2, h3, h4, p, label {
   margin-top: 100px; }
 
 .landing-body p {
-  text-align: center; }
+  text-align: center;
+  font-size: 200%; }
 
 .row {
   margin-top: 5%;
@@ -214,6 +215,10 @@ td.reasons {
 
 .control-label {
   color: #00BCD4; }
+
+.stats {
+  color: #00BCD4;
+  font-size: 1.5em; }
 
 .advice {
   margin-left: 23%; }

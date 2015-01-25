@@ -129,6 +129,7 @@ h1, h2, h3, h4, p, label {
 .landing-body {
   p {
     text-align: center;
+    font-size: 200%;
   }
 }
 
@@ -303,6 +304,13 @@ td.reasons {
 
 .control-label {
   color: #00BCD4;
+}
+
+// ----- STATS PAGE -----
+
+.stats {
+  color: #00BCD4;
+  font-size: 1.5em;
 }
 
 // ----- ADVICE AND RESOURCES PAGE -----
