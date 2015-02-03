@@ -101,6 +101,12 @@
       });
     };
 
+    vm.numberOfHabits = function(data){
+      for (var key in data){
+        console.log(key);
+      }
+    };
+
     vm.newHabit = _freshHabit();
 
     vm.difficultyOptions = habitFactory.difficultyOptions;
@@ -112,38 +118,6 @@
         difficulty: ''
       };
     }
-
-
-    /*vm.filter('habitlistPercentDone', function(){
-      return function(grid){
-        var xCounter = 0;
-        return grid.toLowerCase();
-        for (var i = 0; i < grid.length; i++){
-            if (grid[i] == "X"){
-              xCounter++;
-          }
-        }
-        return (xCounter / 60);
-
-      };
-    });*/
-
-    // get percent completion for each habit
-    /*
-    var ref = new Firebase(FIREBASE_URL); debugger
-    vm.user = $rootScope.user.uid;
-    var gridLocation = ref.child('users').child(vm.user).child('habits').child(id).child('grid');
-
-    habitFactory.pullGridDown(id, FIREBASE_URL, vm.user, function(data){
-      vm.grid = data;
-      console.log(vm.grid);
-    });
-
-    vm.habitlistPercentDone = function(data){
-
-    };*/
-
-
 
   });
 }());
